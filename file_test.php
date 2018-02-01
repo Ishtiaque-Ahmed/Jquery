@@ -5,7 +5,7 @@ function write_log($text_to_write)
 	$text_to_write.="\r\n";
 	$text=file_get_contents("log.txt");
 	$text_to_write.=$text;
-	$success=file_put_contents('log.txt', $text_to_write);
+	$success=file_put_contents('log.txt', $text_to_write, LOCK_EX);
 }
 // file_put_contents('logs.txt', $text_to_write.PHP_EOL , FILE_APPEND | LOCK_EX);
 //to append to existing file the command above should be written
